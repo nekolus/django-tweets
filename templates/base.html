@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <head>
+            {% load bootstrap3 %}
+            {% bootstrap_css %}
+            <title> {{ title }} </title>
+        </head>
+        <body>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2> Recent Tweets </h2>
+                        <ul class="list-unstyled">
+                            {% for p in posts %}
+                               <li> {{ p.description }} </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% bootstrap_javascript_url %}"></script>
+        
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+       {% bootstrap_javascript %}
+        </body>
+    </html>
